@@ -1,10 +1,11 @@
-import Image
 import os
+from PIL import Image
+
 from django.conf import settings
 from django.core.files.base import ContentFile
 from photologue.models import Photo, PHOTOLOGUE_DIR
-from photologue.tests.helpers import LANDSCAPE_IMAGE_PATH, PhotologueBaseTest, \
-QUOTING_IMAGE_PATH
+from photologue.tests.helpers import LANDSCAPE_IMAGE_PATH, PhotologueBaseTest, QUOTING_IMAGE_PATH
+
 
 class PhotoTest(PhotologueBaseTest):
     def tearDown(self):

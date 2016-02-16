@@ -1,6 +1,7 @@
 from django.contrib import admin
 from models import *
 
+
 class GalleryAdmin(admin.ModelAdmin):
     list_display = ('title', 'date_added', 'photo_count', 'is_public')
     list_filter = ['date_added', 'is_public']
@@ -8,12 +9,14 @@ class GalleryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'title_slug': ('title',)}
     filter_horizontal = ('photos',)
 
+
 class PhotoAdmin(admin.ModelAdmin):
     list_display = ('title', 'date_taken', 'date_added', 'is_public', 'tags', 'view_count', 'admin_thumbnail')
     list_filter = ['date_added', 'is_public']
     search_fields = ['title', 'title_slug', 'caption']
     list_per_page = 10
     prepopulated_fields = {'title_slug': ('title',)}
+
 
 class PhotoEffectAdmin(admin.ModelAdmin):
     list_display = ('name', 'description', 'color', 'brightness', 'contrast', 'sharpness', 'filters', 'admin_sample')
@@ -34,6 +37,7 @@ class PhotoEffectAdmin(admin.ModelAdmin):
             'fields': ('transpose_method',)
         }),
     )
+
 
 class PhotoSizeAdmin(admin.ModelAdmin):
     list_display = ('name', 'width', 'height', 'crop', 'pre_cache', 'effect', 'increment_count')

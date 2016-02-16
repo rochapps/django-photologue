@@ -2,6 +2,7 @@ from django.core.management.base import BaseCommand, CommandError
 from photologue.management.commands import get_response, create_photosize
 from photologue.models import PhotoEffect
 
+
 class Command(BaseCommand):
     help = ('Prompts the user to set up the default photo sizes required by Photologue.')
     requires_model_validation = True
@@ -9,6 +10,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         return init(*args, **kwargs)
+
 
 def init(*args, **kwargs):
     msg = '\nPhotologue requires a specific photo size to display thumbnail previews in the Django admin application.\nWould you like to generate this size now? (yes, no):'

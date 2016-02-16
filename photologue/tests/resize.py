@@ -4,6 +4,7 @@ import os
 from photologue.models import Photo, PhotoSizeCache
 from photologue.tests.helpers import PhotologueBaseTest, SQUARE_IMAGE_PATH, PORTRAIT_IMAGE_PATH
 
+
 class ImageResizeTest(PhotologueBaseTest):
     def setUp(self):
         super(ImageResizeTest, self).setUp()

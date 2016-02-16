@@ -1,6 +1,7 @@
 from photologue import models
 from photologue.tests import helpers
 
+
 class GalleryTest(helpers.PhotologueBaseTest):
 
     def setUp(self):
@@ -34,7 +35,7 @@ class GalleryTest(helpers.PhotologueBaseTest):
         self.assert_(self.test_gallery.photo_count(public=False) == 2)
 
     def test_sample(self):
-        """Method 'sample' should return a random queryset of photos from the 
+        """Method 'sample' should return a random queryset of photos from the
         gallery."""
 
         # By default we return all photos from the gallery (but ordered at random).

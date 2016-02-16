@@ -9,6 +9,7 @@ YEAR = datetime.now().year
 MONTH = datetime.now().ctime().split(' ')[1].lower()
 DAY = datetime.now().day
 
+
 class RequestGalleryTest(RequestTest):
 
     def setUp(self):

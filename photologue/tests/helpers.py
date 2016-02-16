@@ -11,12 +11,14 @@ PORTRAIT_IMAGE_PATH = os.path.join(RES_DIR, 'test_portrait.jpg')
 SQUARE_IMAGE_PATH = os.path.join(RES_DIR, 'test_square.jpg')
 QUOTING_IMAGE_PATH = os.path.join(RES_DIR, 'test_&quoting.jpg')
 
+
 def _create_new_photo(name, slug):
     pl = Photo(title=name, title_slug=slug)
     pl.image.save(os.path.basename(LANDSCAPE_IMAGE_PATH),
                        ContentFile(open(LANDSCAPE_IMAGE_PATH, 'rb').read()))
     pl.save()
     return pl
+
 
 class RequestTest(TestCase):
 
@@ -26,7 +28,6 @@ class RequestTest(TestCase):
     def assertUrl(self, url):
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
-
 
 
 class PhotologueBaseTest(TestCase):

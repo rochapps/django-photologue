@@ -24,7 +24,9 @@ MEDIA_ROOT = os.path.join(BASEDIR, 'media')
 ROOT_URLCONF = 'photologue.urls'
 
 TEMPLATE_DIRS = (
-    os.path.join(BASEDIR, 'templates')
+    os.path.join(BASEDIR, 'templates'),
 )
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+SECRET_KEY = 'secretkey'

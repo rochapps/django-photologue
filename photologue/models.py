@@ -48,13 +48,9 @@ except ImportError:
             return 'CharField'
     tagfield_help_text = _('Django-tagging was not found, tags will be treated as plain text.')
 
-    # Tell South how to handle this custom field.
-    from south.modelsinspector import add_introspection_rules
-    add_introspection_rules([], ["^photologue\.models\.TagField"])
-
-from utils import EXIF
-from utils.reflection import add_reflection
-from utils.watermark import apply_watermark
+from photologue.utils import EXIF
+from photologue.utils.reflection import add_reflection
+from photologue.utils.watermark import apply_watermark
 
 # Default limit for gallery.latest
 LATEST_LIMIT = getattr(settings, 'PHOTOLOGUE_GALLERY_LATEST_LIMIT', None)
@@ -168,7 +164,7 @@ class Gallery(models.Model):
 
     def sample(self, count=None, public=True):
         """Return a sample of photos, ordered at random.
-        If the 'count' is not specified, it will return a number of photos 
+        If the 'count' is not specified, it will return a number of photos
         limited by the GALLERY_SAMPLE_SIZE setting.
         """
         if not count:
@@ -441,7 +437,7 @@ class ImageModel(models.Model):
                 except KeyError:
                     pass
             im.save(im_filename, 'JPEG', quality=int(photosize.quality), optimize=True)
-        except IOError, e:
+        except IOError as e:
             if os.path.isfile(im_filename):
                 os.unlink(im_filename)
             raise e

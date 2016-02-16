@@ -5,6 +5,7 @@ from photologue.tests import helpers
 
 import datetime
 
+
 @unittest.skipUnless('django.contrib.sitemaps' in settings.INSTALLED_APPS,
                      'Sitemaps not installed in this project, nothing to test.')
 class SitemapTest(helpers.PhotologueBaseTest):

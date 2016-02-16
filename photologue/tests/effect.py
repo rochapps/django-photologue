@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
-import Image
+from PIL import Image
 from photologue.models import PhotoEffect
 from photologue.tests.helpers import PhotologueBaseTest
+
 
 class PhotoEffectTest(PhotologueBaseTest):
     def test(self):

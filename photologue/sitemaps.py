@@ -16,6 +16,7 @@ etc...
 from django.contrib.sitemaps import Sitemap
 from models import Gallery, Photo
 
+
 class PhotologueSitemap(Sitemap):
     priority = 0.5
 

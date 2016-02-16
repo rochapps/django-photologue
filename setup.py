@@ -37,8 +37,7 @@ setup(
                    'Operating System :: OS Independent',
                    'Programming Language :: Python',
                    'Topic :: Utilities'],
-    install_requires=['Django>=1.3', # Change to class-based views means 1.3 minimum.
-                      'South>=0.7.5', # Might work with earlier versions, but not tested.
-                      'Pillow>=1.7.7', # Might work with earlier versions, but not tested.
+    install_requires=['Django==1.8.7',  # Change to class-based views means 1.3 minimum.
+                      'Pillow==3.1.0',  # Might work with earlier versions, but not tested.
                       ],
 )

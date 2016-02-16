@@ -1,18 +1,16 @@
-from django.conf.urls.defaults import *
+from django.conf.urls import url, include
 
 from photologue.sitemaps import PhotologueSitemap
 
 # Note: this urls definition file is used only for sitemap tests at the moment.
 # Maybe it should be extended at a later date?
 
-urlpatterns = patterns('',
-    (r'^photologue/', include('photologue.urls')),
-)
+urlpatterns = [
+    url(r'^photologue/', include('photologue.urls')),
+]
 
-sitemaps = {'photologue': PhotologueSitemap
-}
+sitemaps = {'photologue': PhotologueSitemap}
 
-urlpatterns += patterns('',
-    (r'^sitemap.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': \
-                                                                      sitemaps})
-)
+urlpatterns += [
+    url(r'^sitemap.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps})
+]
